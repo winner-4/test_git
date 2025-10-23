@@ -44,10 +44,14 @@ echo $CUDA_VISIBLE_DEVICES
 
 ## 不同服务器之间镜像迁移
 
-导出镜像导入镜像docker commit 容器名 镜像名
-docker save 镜像id -o 要保存的tar包名称.tardocker load < 备份文件.tar docker export <container_id> -o <filename>.tardocker import 镜像文件.tar 镜像名:versiondocker tag 镜像id 要改的镜像名字：版本号
-docker rename 容器名称或ID 新的名字
-为容器改名(新建一个别名，原始的容器名称仍然有效)
+
+| 导出镜像                                                     | 导入镜像                                  |
+| ------------------------------------------------------------ | ----------------------------------------- |
+| docker commit 容器名 镜像名<br />docker save 镜像id -o 要保存的tar包名称.tar | docker load < 备份文件.tar                |
+| docker export <container_id> -o <filename>.tar               | docker import 镜像文件.tar 镜像名:version |
+| docker tag 镜像id 要改的镜像名字：版本号<br/>docker rename 容器名称或ID 新的名字<br/>为容器改名(新建一个别名，原始的容器名称仍然有效) |                                           |
+
+
 
 # 服务器
 
@@ -185,43 +189,6 @@ detectron2: https://detectron2.readthedocs.io/en/latest/tutorials/install.html
 
 cuda：https://developer.nvidia.com/cuda-toolkit-archive
 
-## 下载huggingface开源模型/数据
-
-```Bash
-import os
-import os.path as osp
-
-# 1. snapshot_download 下载huggingface_hub
-# from huggingface_hub import snapshot_download
-# repo_id = "geshang/Seg-R1-7B"
-# local_dir = f'/data0/m00028512/workspace/checkpoints'
-# os.makedirs(local_dir, exist_ok=True)
-# print(f'🚩 Downlding HuggingFace File {repo_id} start, saved as {local_dir}')
-# snapshot_download(
-#     repo_id=repo_id,
-#     cache_dir=local_dir,
-#     local_dir_use_symlinks=False,  # 禁止生成软链接，直接存储实体文件
-#     max_workers=8
-# )
-
-# 2. 后续加载
-# from transformers import AutoModel
-# model = AutoModel.from_pretrained("/workspace/models/kanashi6_UFO")
-# print(f'🏳️🌈 Downlding HuggingFace File {repo_id} success, saved as {local_dir}')
-
-# 3. 通过kagglehub下载数据集
-# import kagglehub
-# # Download latest version
-# path = kagglehub.dataset_download("wenewone/image-cropping-datasets")
-# print("Path to dataset files:", path)
-
-# 4. shell命令下载模型
-# pip install -U "huggingface_hub[cli]
-# hf download naver-iv/zim-anything-vitl --local-dir ./
-# hf download Perceive-Anything/PAM-3B --local-dir ./
-# hf download CIDAS/clipseg-rd64-refined --local-dir ./
-hf download facebook/sam2.1-hiera-large --local-dir ./
-hf download LongfeiHuang/SDMatte --local-dir ./
 hf download openai/clip-vit-large-patch14-336 --local-dir ./
 hf download lmsys/vicuna-7b-v1.5  --local-dir ./
 hf download lmc22/text4seg-llava-7b-p24 --local-dir ./
