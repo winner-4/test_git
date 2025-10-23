@@ -188,8 +188,3 @@ Flash-atten: https://github.com/Dao-AILab/flash-attention/releases
 detectron2: https://detectron2.readthedocs.io/en/latest/tutorials/install.html
 
 cuda：https://developer.nvidia.com/cuda-toolkit-archive
-
-hf download openai/clip-vit-large-patch14-336 --local-dir ./
-hf download lmsys/vicuna-7b-v1.5  --local-dir ./
-hf download lmc22/text4seg-llava-7b-p24 --local-dir ./
-```
