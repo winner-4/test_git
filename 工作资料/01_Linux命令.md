@@ -96,43 +96,6 @@ Mini-forge:
 
 <img width="656" height="329" alt="image" src="https://github.com/user-attachments/assets/47c4822e-c460-43f9-9494-0efe943dd9fd" />
 
-## 查看三方环境
-
-```Bash
-echo
-python --version
-echo
-
-nvcc --version
-echo
-
-echo "-------------torch---------------"
-pip list | grep "torch"
-echo
-
-echo "-------------onnx---------------"
-pip list | grep "onnx"
-echo
-
-echo "-------------agent---------------"
-pip list | grep "qwen"
-pip list | grep "llava"
-pip list | grep "vllm"
-pip list | grep "swift"
-pip list | grep "attn"
-pip list | grep "transformers"
-pip list | grep "langchain"
-echo
-
-echo "-------------mmdetection/mmseg---------------"
-pip list | grep "mm"
-echo
-
-echo "-------------sam---------------"
-pip list | grep "sam"
-pip list | grep "anything"
-echo
-```
 
 ## 将本地ssh公钥复制到服务器
 
