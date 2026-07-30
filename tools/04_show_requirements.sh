@@ -15,13 +15,7 @@ pip list | grep "onnx"
 echo
 
 echo "-------------agent---------------"
-pip list | grep "qwen"
-pip list | grep "llava"
-pip list | grep "vllm"
-pip list | grep "swift"
-pip list | grep "attn"
-pip list | grep "transformers"
-pip list | grep "langchain"
+pip list | grep -E "qwen|llava|vllm|swift|attn|transformers|langchain|lmdeploy"
 echo
 
 echo "-------------mmdetection/mmseg---------------"
@@ -29,12 +23,5 @@ pip list | grep "mm"
 echo
 
 echo "-------------sam---------------"
-pip list | grep "sam"
-pip list | grep "anything"
+pip list | grep -E "sam|anything"
 echo
-
-
-
-
-
-
