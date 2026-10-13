@@ -82,6 +82,12 @@ tar -cvf archive.tar -C /path/to/parent dirname/
 
 # 查看 tar 包内容不解压
 tar -tvf archive.tar
+
+# 压缩进阶版 
+# 1. 安装工具  2. pigz压缩  3. pigz解压
+apt-get update && apt-get install -y pigz
+tar -I pigz -cf IJB_release.tar.gz IJB_release
+tar -I pigz -xf IJB_release.tar.gz -C ./
 ```
 
 ## CUDA 相关
